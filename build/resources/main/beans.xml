@@ -10,6 +10,6 @@ http://www.springframework.org/schema/beans ">
 
     <bean id="database" class="Database">
         <property name="port" value="8080"/>
-        <property name="Name" value="Database 1"/>
+        <property name="Name" value="Db 1"/>
     </bean>
     </beans>

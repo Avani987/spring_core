@@ -1,3 +1,6 @@
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Database {
 
     int port;
@@ -19,6 +22,18 @@ public class Database {
         Name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Port : "+ port + ", Name: "+ Name;
+    }
+
+    public static void main(String[] args) {
+
+        ApplicationContext ctx= new ClassPathXmlApplicationContext("beans.xml");
+        Database db = ctx.getBean("database",Database.class);
+        System.out.println(db);
+
+    }
 
 
 }
