@@ -13,13 +13,13 @@ public class Restaurant {
     public Restaurant() {
     }
 
-    /*public HotDrink getHotDrink() {
+    public HotDrink getHotDrink() {
         return hotDrink;
     }
 
     public void setHotDrink(HotDrink hotDrink) {
         this.hotDrink = hotDrink;
-    }*/
+    }
 }
 
 
@@ -31,9 +31,18 @@ class Main {
         Restaurant restaurant;
 
         restaurant = ctx.getBean("teaRestaurant",Restaurant.class);
+
+        System.out.println("\n After fetching teaRestaurant bean for the first time : ");
         restaurant.hotDrink.prepareHotDrink();
 
-        //restaurant=ctx.getBean("expressTeaRestaurant",Restaurant.class);
-        //restaurant.hotDrink.prepareHotDrink();
+        Restaurant expressTea=ctx.getBean("expressTeaRestaurant",Restaurant.class);
+        restaurant.setHotDrink(expressTea.getHotDrink());
+        System.out.println("\n After setting the hotDrink type from Tea to ExpressTea");
+        restaurant.hotDrink.prepareHotDrink();
+
+        restaurant= ctx.getBean("teaRestaurant",Restaurant.class);
+
+        System.out.println("\n After fetching the teaRestaurant bean again : ");
+        restaurant.hotDrink.prepareHotDrink();
         }
 }
