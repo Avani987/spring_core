@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="complexBean" class="Complex">
+        <property name="list">
+            <list>
+                <value>listvalue1</value>
+                <value>listvalue2</value>
+                <value>listvalue3</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>seta</value>
+                <value>setb</value>
+                <value>setc</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="mapvalue1"/>
+                <entry key="2" value="mapvalue2"/>
+            </map>
+        </property>
+    </bean>
+</beans>
