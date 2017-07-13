@@ -5,13 +5,21 @@ public class Restaurant {
 
     HotDrink hotDrink;
 
-    public HotDrink getHotDrink() {
+    public Restaurant(HotDrink hotDrink) {
+
+        this.hotDrink = hotDrink;
+    }
+
+    public Restaurant() {
+    }
+
+    /*public HotDrink getHotDrink() {
         return hotDrink;
     }
 
     public void setHotDrink(HotDrink hotDrink) {
         this.hotDrink = hotDrink;
-    }
+    }*/
 }
 
 
@@ -25,7 +33,7 @@ class Main {
         restaurant = ctx.getBean("teaRestaurant",Restaurant.class);
         restaurant.hotDrink.prepareHotDrink();
 
-        restaurant=ctx.getBean("expressTeaRestaurant",Restaurant.class);
-        restaurant.hotDrink.prepareHotDrink();
+        //restaurant=ctx.getBean("expressTeaRestaurant",Restaurant.class);
+        //restaurant.hotDrink.prepareHotDrink();
         }
 }
