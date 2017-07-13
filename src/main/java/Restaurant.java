@@ -13,13 +13,13 @@ public class Restaurant {
     public Restaurant() {
     }
 
-    /*public HotDrink getHotDrink() {
+    public HotDrink getHotDrink() {
         return hotDrink;
     }
 
     public void setHotDrink(HotDrink hotDrink) {
         this.hotDrink = hotDrink;
-    }*/
+    }
 }
 
 

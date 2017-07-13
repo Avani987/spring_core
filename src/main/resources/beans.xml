@@ -5,10 +5,10 @@
       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 http://www.springframework.org/schema/beans ">
 
-    <bean id="hotDrink" class="Tea"/>
-    <bean id="expressTea" class="ExpressTea"/>
+    <bean id="tea" class="Tea"/>
+    <!--<bean id="expressTea" class="ExpressTea"/>-->
 
-    <bean id="teaRestaurant" class="Restaurant" autowire="byName"/>
+    <bean id="teaRestaurant" class="Restaurant" autowire="byType"/>
 
     <!--<bean id="expressTeaRestaurant" class="Restaurant">
         <property name="hotDrink">
