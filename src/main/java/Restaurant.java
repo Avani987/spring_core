@@ -1,14 +1,18 @@
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-//uncomment to check autowiring for other 2 cases
+@Component //other listed annotations can also be used in similar way in place of this one
+//@Controller
+//@Service
+//@Component
 public class Restaurant {
 
-    //@Autowired  //To autowire by field
     HotDrink hotDrink;
-   //@Autowired    //To autowire using constructor
     public Restaurant(HotDrink hotDrink) {
 
         this.hotDrink = hotDrink;
@@ -20,13 +24,14 @@ public class Restaurant {
     public HotDrink getHotDrink() {
         return hotDrink;
     }
-   @Required
-   @Autowired    //To autowire using setter method
+
+   @Autowired
     public void setHotDrink(HotDrink hotDrink) {
         this.hotDrink = hotDrink;
     }
 }
 
+@Component
 class Main {
 
     public static void main(String[] args) {
