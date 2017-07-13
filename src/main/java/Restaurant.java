@@ -1,10 +1,14 @@
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+//uncomment to check autowiring for other 2 cases
 public class Restaurant {
 
+    //@Autowired  //To autowire by field
     HotDrink hotDrink;
-
+   //@Autowired    //To autowire using constructor
     public Restaurant(HotDrink hotDrink) {
 
         this.hotDrink = hotDrink;
@@ -16,12 +20,12 @@ public class Restaurant {
     public HotDrink getHotDrink() {
         return hotDrink;
     }
-
+   @Required
+   @Autowired    //To autowire using setter method
     public void setHotDrink(HotDrink hotDrink) {
         this.hotDrink = hotDrink;
     }
 }
-
 
 class Main {
 
@@ -31,18 +35,7 @@ class Main {
         Restaurant restaurant;
 
         restaurant = ctx.getBean("teaRestaurant",Restaurant.class);
-
-        System.out.println("\n After fetching teaRestaurant bean for the first time : ");
         restaurant.hotDrink.prepareHotDrink();
 
-        Restaurant expressTea=ctx.getBean("expressTeaRestaurant",Restaurant.class);
-        restaurant.setHotDrink(expressTea.getHotDrink());
-        System.out.println("\n After setting the hotDrink type from Tea to ExpressTea");
-        restaurant.hotDrink.prepareHotDrink();
-
-        restaurant= ctx.getBean("teaRestaurant",Restaurant.class);
-
-        System.out.println("\n After fetching the teaRestaurant bean again : ");
-        restaurant.hotDrink.prepareHotDrink();
         }
 }
